@@ -1,2 +1,2 @@
 # cs-234-tmu-tea-shop
-Tea Shop management System
+A Tea Shop management System
