@@ -48,4 +48,13 @@ public class Product {
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
+    public String printProduct(){
+
+    }
+    public void removeProduct(product){
+
+    }
+    public void addProduct(product){
+
+    }
 }
