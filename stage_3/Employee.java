@@ -11,7 +11,7 @@ package stage_3;
 
 import java.util.Date;
 
-public class Employee {
+public class Employee extends Person{
     private String employeeId;
     private Date hireDate;
     private Date leaveDate;

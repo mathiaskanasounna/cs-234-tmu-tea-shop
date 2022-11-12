@@ -9,5 +9,14 @@
  * */
 package stage_3;
 
-public class Manager {
+public class Manager extends Employee{
+    private String managerId;
+
+    public String getManagerId() {
+        return managerId;
+    }
+
+    public void setManagerId(String managerId) {
+        this.managerId = managerId;
+    }
 }
