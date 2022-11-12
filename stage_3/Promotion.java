@@ -9,6 +9,8 @@
  * */
 package stage_3;
 
+import java.util.Date;
+
 public class Promotion {
 
     private String promotionID;
@@ -41,8 +43,4 @@ public class Promotion {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
-    public String sendPromotion(){
-
-    }
-    public void createPromotion(String promotion ,double discount)
 }

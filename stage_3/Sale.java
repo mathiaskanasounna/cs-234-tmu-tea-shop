@@ -13,9 +13,8 @@ import java.util.ArrayList;
 public class Sale {
     private String orderId;
     private String orderDate;
-    private Arraylist<String> products;
+    private ArrayList<Product> products;
     public Sale(){
-        this.products = new ArrayList<>();
     }
 
     public String getOrderId() {
@@ -33,14 +32,20 @@ public class Sale {
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
-    public void getProducts(product){
 
+    public ArrayList<Product> getProducts() {
+        return products;
     }
-    public int totalPrice(){
 
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
+    }
+
+    public int totalPrice(){
+        return 0;
     }
     public int numberOfItems(){
-        return products.size;
+        return products.size();
     }
 
 }

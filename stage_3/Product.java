@@ -49,12 +49,6 @@ public class Product {
         this.unitPrice = unitPrice;
     }
     public String printProduct(){
-
-    }
-    public void removeProduct(product){
-
-    }
-    public void addProduct(product){
-
+        return  this.productId;
     }
 }
