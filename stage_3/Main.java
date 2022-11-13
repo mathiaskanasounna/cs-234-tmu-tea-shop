@@ -27,7 +27,9 @@ public class Main {
             System.out.println(" 1 - Add a new Employee,     2 - Add a new Product,      3 - Add a new Client");
             System.out.println(" 4 - Add a new Sale,     5 - Add a new Promotion   6 - Add a new Manager");
             System.out.println(" 7 - Remove an Employee,     8 - Remove a Product,  9 - Remove a Client");
-            System.out.println(" 10 - Remove a Sale     11 - Remove a Manager");
+            System.out.println(" 10 - Remove a Sale     11 - Remove a Manager   12 - Display Employee");
+            System.out.println(" 13 - Display Client,     14 - Display Manager   15 - Display Product");
+            System.out.println(" 16 - Display Sales,     17 - Display Promotion   ");
             System.out.println(" q or Q - to quit");
             choice = input.next();
             if(choice.equalsIgnoreCase("1")){
@@ -90,7 +92,42 @@ public class Main {
                                                             System.out.println("Good Bye !!!");
                                                         }
                                                         else{
-                                                            System.out.println("Invalid Option.. \n\n");
+                                                            if(choice.equalsIgnoreCase("12")){
+                                                                //12 display employee
+                                                                showEmployees(teaShop);
+                                                            }
+                                                            else{
+                                                                if(choice.equalsIgnoreCase("13")){
+                                                                  //13 display client
+                                                                    showClients(teaShop);
+                                                                }
+                                                                else{
+                                                                    if(choice.equalsIgnoreCase("14")){
+                                                                        // 14 display manager
+                                                                        showManagers(teaShop);
+                                                                    }
+                                                                    else{
+                                                                        if(choice.equalsIgnoreCase("15")){
+                                                                            //15 Display product
+                                                                            showProducts(teaShop);
+                                                                        }
+                                                                        else{
+                                                                            if(choice.equalsIgnoreCase("16")){
+                                                                                //16 display sale
+                                                                                showSales(teaShop);
+                                                                            }else{
+                                                                                if(choice.equalsIgnoreCase("17")){
+                                                                                   //17 display promotion
+                                                                                    showPromotions(teaShop);
+                                                                                }else{
+                                                                                    System.out.println("Invalid choice");
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+
                                                         }
                                                     }
                                                 }
@@ -105,6 +142,24 @@ public class Main {
             }
         }while(!choice.equalsIgnoreCase("Q"));
 
+    }
+
+    private static void showPromotions(TeaShop teaShop) {
+    }
+
+    private static void showSales(TeaShop teaShop) {
+    }
+
+    private static void showProducts(TeaShop teaShop) {
+    }
+
+    private static void showManagers(TeaShop teaShop) {
+    }
+
+    private static void showClients(TeaShop teaShop) {
+    }
+
+    private static void showEmployees(TeaShop teaShop) {
     }
 
     private static void removeManager(TeaShop teaShop) {
