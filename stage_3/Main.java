@@ -145,21 +145,27 @@ public class Main {
     }
 
     private static void showPromotions(TeaShop teaShop) {
+        teaShop.displayPromotion();
     }
 
     private static void showSales(TeaShop teaShop) {
+        teaShop.displaySales();
     }
 
     private static void showProducts(TeaShop teaShop) {
+        teaShop.displayProducts();
     }
 
     private static void showManagers(TeaShop teaShop) {
+        teaShop.displayManagers();
     }
 
     private static void showClients(TeaShop teaShop) {
+        teaShop.displayClients();
     }
 
     private static void showEmployees(TeaShop teaShop) {
+        teaShop.displayEmployees();
     }
 
     private static void removeManager(TeaShop teaShop) {
@@ -306,7 +312,7 @@ public class Main {
         System.out.println("Enter email ");
         String email = input.next();
         System.out.println("Enter Street Address");
-        String streetAddress= input.nextLine();
+        String streetAddress= input.next();
         System.out.println("Enter city");
         String city = input.next();
         System.out.println("Enter Zip Code");
@@ -357,11 +363,11 @@ public class Main {
         System.out.println("Enter the detail on the new Employee ");
         Scanner input = new Scanner(System.in);
         System.out.println("Enter First Name ");
-        String firstName = input.next();
+        String firstName = input.nextLine();
         System.out.println("Enter Last Name");
-        String lastName = input.next();
+        String lastName = input.nextLine();
         System.out.println("Enter email ");
-        String email = input.next();
+        String email = input.nextLine();
         System.out.println("Enter Street Address");
         String streetAddress= input.nextLine();
         System.out.println("Enter city");

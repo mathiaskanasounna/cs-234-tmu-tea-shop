@@ -68,4 +68,7 @@ public class Promotion {
     public void setDiscountRate(double discountRate) {
         this.discountRate = discountRate;
     }
+    public void showPromotionInfo(){
+        System.out.println("["+promotionID+", "+couponCode+", "+discountRate+", "+promotionDescription+" ]");
+    }
 }

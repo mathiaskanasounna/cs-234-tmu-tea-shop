@@ -104,6 +104,7 @@ public class TeaShop {
 
     public void addEmployee(Employee employee){
         this.employees.add(employee);
+        System.out.println("Added new employee");
     }
     public void removeEmployee(String employeeId){
         int listSize= employees.size();
@@ -138,6 +139,7 @@ public class TeaShop {
     }
     public void addClient(Client client){
         this.clients.add(client);
+        System.out.println("Added new client");
     }
     public void removeClient(String clientId){
         int listSize= clients.size();
@@ -169,10 +171,12 @@ public class TeaShop {
     }
     public  void addProduct(Product product){
         this.products.add(product);
+        System.out.println("Added new Product");
     }
 
     public  void addManager(Manager manager){
         this.managers.add(manager);
+        System.out.println("Added new Manager");
     }
     public  void removeManager(String managerId){
         int listSize= managers.size();
@@ -229,5 +233,13 @@ public class TeaShop {
             }
         }
         return null;
+    }
+
+    public void displayPromotion() {
+        for(Product product:products){
+            if(product.getPromotion()!=null){
+                product.getPromotion().showPromotionInfo();
+            }
+        }
     }
 }
