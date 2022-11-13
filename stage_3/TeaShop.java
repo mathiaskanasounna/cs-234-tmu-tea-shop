@@ -139,4 +139,20 @@ public class TeaShop {
         }
         return null;
     }
+    public void displayEmployees(){
+        //@TODO Theodoro
+    }
+    public void displayClients(){
+        //@TODO Theodoro
+    }
+    public void displayManagers(){
+        //@TODO Theodoro
+    }
+    public void displayProducts(){
+        //@TODO Theodoro
+    }
+    public void displaySales(){
+        //@TODO Theodoro
+    }
+
 }

@@ -18,11 +18,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         TeaShop teaShop = new TeaShop();
-        ArrayList<Client> clients = new ArrayList<>();
-        ArrayList<Employee> employees = new ArrayList<>();
-        ArrayList<Product> products = new ArrayList<>();
-        ArrayList<Sale> sales = new ArrayList<>();
-        ArrayList<Manager> managers = new ArrayList<>();
+
         System.out.println("Welcome To The Tea - Shop System");
         Scanner input = new Scanner(System.in);
         String choice;
@@ -84,7 +80,7 @@ public class Main {
                                                 else{
                                                     if(choice.equalsIgnoreCase("11")){
                                                         //11 - Remove a Manager
-                                                        removeManager(managers);
+                                                        removeManager(teaShop);
                                                     }
                                                     else{
                                                         if(choice.equalsIgnoreCase("Q")){
@@ -111,7 +107,7 @@ public class Main {
 
     }
 
-    private static void removeManager(ArrayList<Manager> managers) {
+    private static void removeManager(TeaShop teaShop) {
     }
 
     private static void removeSale(TeaShop teaShop) {
@@ -186,7 +182,7 @@ public class Main {
         System.out.println("Enter email ");
         String email = input.next();
         System.out.println("Enter Street Address");
-        String streetAddress= input.next();
+        String streetAddress= input.nextLine();
         System.out.println("Enter city");
         String city = input.next();
         System.out.println("Enter Zip Code");
@@ -243,7 +239,7 @@ public class Main {
         System.out.println("Enter email ");
         String email = input.next();
         System.out.println("Enter Street Address");
-        String streetAddress= input.next();
+        String streetAddress= input.nextLine();
         System.out.println("Enter city");
         String city = input.next();
         System.out.println("Enter Zip Code");
