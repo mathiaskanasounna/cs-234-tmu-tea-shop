@@ -131,4 +131,12 @@ public class TeaShop {
     }
 
 
+    public Product getProduct(String productId) {
+        for(Product product: products){
+            if(product.getProductId().equals(productId)){
+                return  product;
+            }
+        }
+        return null;
+    }
 }

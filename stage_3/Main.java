@@ -10,6 +10,7 @@
 package stage_3;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -129,6 +130,49 @@ public class Main {
     }
 
     private static void addNewSale(TeaShop teaShops) {
+
+        Sale sale = new Sale();
+        System.out.println("Enter the detail on the new Sale ");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter Order ID ");
+        String orderId = input.next();
+        LocalDateTime orderDate = LocalDateTime.now();
+        String choice;
+        do {
+            System.out.println("Select Sale operation");
+            System.out.println(" 1 - to Enter Product information on the Sale,      q - to Quit");
+            choice = input.next();
+            if(choice.equalsIgnoreCase("1")) {
+                System.out.println("Enter product ID on sale " + orderId);
+                String productId = input.next();
+                System.out.println("Enter product quantity for " + productId);
+                int productQuantity = input.nextInt();
+                sale.setOrderDate(orderDate);
+                sale.setOrderId(orderId);
+                Product inventoryProduct = teaShops.getProduct(productId);
+                if (inventoryProduct == null) {
+                    System.out.println("The Product Id do not exist");
+                } else {
+                    Product product = new Product();
+                    product.setDistributor(inventoryProduct.getDistributor());
+                    product.setQuantity(productQuantity);
+                    product.setProductName(inventoryProduct.getProductName());
+                    product.setUnitPrice(inventoryProduct.getUnitPrice());
+                    inventoryProduct.setQuantity(inventoryProduct.getQuantity() - productQuantity);
+                    sale.addProduct(product);
+                }
+            }
+            else {
+                if(choice.equalsIgnoreCase("q")){
+                    System.out.println("Here is the summary of the order");
+                    //@TODO
+                    //print the summary of the order
+                }
+                else {
+                    System.out.println("Invalid Choice ");
+                }
+            }
+        }while(choice.equalsIgnoreCase("q"));
     }
 
     private static void createNewClient(TeaShop teaShops) {

@@ -8,13 +8,15 @@
  *
  * */
 package stage_3;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Sale {
     private String orderId;
-    private String orderDate;
+    private LocalDateTime orderDate;
     private ArrayList<Product> products;
     public Sale(){
+        products = new ArrayList<>();
     }
 
     public String getOrderId() {
@@ -25,11 +27,11 @@ public class Sale {
         this.orderId = orderId;
     }
 
-    public String getOrderDate() {
+    public LocalDateTime getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(String orderDate) {
+    public void setOrderDate(LocalDateTime orderDate) {
         this.orderDate = orderDate;
     }
 
@@ -46,6 +48,9 @@ public class Sale {
     }
     public int numberOfItems(){
         return products.size();
+    }
+    public void addProduct(Product product){
+        this.products.add(product);
     }
 
 }
