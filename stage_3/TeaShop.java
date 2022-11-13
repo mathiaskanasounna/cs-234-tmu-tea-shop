@@ -18,6 +18,17 @@ public class TeaShop {
     private String website;
     private ArrayList <Client> clients;
     private ArrayList<Employee> employees;
+    private ArrayList<Manager> managers;
+    private ArrayList<Product> products;
+    private ArrayList<Sale> sales;
+
+    public TeaShop() {
+        this.clients= new ArrayList<>();
+        this.employees = new ArrayList<>();
+        this.products = new ArrayList<>();
+        this.sales = new ArrayList<>();
+        this.managers = new ArrayList<>();
+    }
 
     public String getName() {
         return name;
@@ -66,8 +77,33 @@ public class TeaShop {
     public void setEmployees(ArrayList<Employee> employees) {
         this.employees = employees;
     }
-    public void addEmployee(Employee employee){
 
+    public ArrayList<Manager> getManagers() {
+        return managers;
+    }
+
+    public void setManagers(ArrayList<Manager> managers) {
+        this.managers = managers;
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
+    }
+
+    public ArrayList<Sale> getSales() {
+        return sales;
+    }
+
+    public void setSales(ArrayList<Sale> sales) {
+        this.sales = sales;
+    }
+
+    public void addEmployee(Employee employee){
+        this.employees.add(employee);
     }
     public void removeEmployee(String employeeId){
 
@@ -91,7 +127,8 @@ public class TeaShop {
 
     }
     public  void addProduct(Product product){
-
+        this.products.add(product);
     }
+
 
 }

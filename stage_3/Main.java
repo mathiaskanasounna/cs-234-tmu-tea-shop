@@ -135,6 +135,25 @@ public class Main {
     }
 
     private static void createNewProduct(TeaShop teaShops) {
+        Product product = new Product();
+        System.out.println("Enter the detail on the new Product ");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter Product Name ");
+        String productName = input.next();
+        System.out.println("Enter Distributor Name");
+        String distributorName = input.next();
+        System.out.println("Enter Product ID ");
+        String productId = input.next();
+        System.out.println("Enter Unit Price");
+        double unitPrice= input.nextDouble();
+        System.out.println("Enter Quantity");
+        int quantity = input.nextInt();
+        product.setProductId(productId);
+        product.setProductName(productName);
+        product.setQuantity(quantity);
+        product.setUnitPrice(unitPrice);
+        product.setDistributor(distributorName);
+        teaShops.addProduct(product);
     }
 
     private static void createNewEmployee(TeaShop teaShops) {

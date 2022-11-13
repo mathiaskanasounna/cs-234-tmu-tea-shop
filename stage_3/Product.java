@@ -16,7 +16,7 @@ public class Product {
     private String productId;
     private String productName;
     private double unitPrice;
-
+    private int quantity;
     public String getDistributor() {
         return distributor;
     }
@@ -48,6 +48,15 @@ public class Product {
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public String printProduct(){
         return  this.productId;
     }
