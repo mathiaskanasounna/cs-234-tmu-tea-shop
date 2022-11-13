@@ -58,5 +58,8 @@ public class Employee extends Person{
     public void setUserName(String userName) {
         this.userName = userName;
     }
+    public void showEmployeeInfo(){
+        System.out.println("|"+employeeId+"| "+"| "+super.getFirstName()+"|");
+    }
 
 }

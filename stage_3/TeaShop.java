@@ -141,6 +141,9 @@ public class TeaShop {
     }
     public void displayEmployees(){
         //@TODO Theodoro
+        for(Employee employee:employees){
+            employee.showEmployeeInfo();
+        }
     }
     public void displayClients(){
         //@TODO Theodoro
