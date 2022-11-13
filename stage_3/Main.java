@@ -175,6 +175,7 @@ public class Main {
     }
 
     private static void createNewManager(TeaShop teaShops) {
+        System.out.println("Enter the Employee ID of Manager");
     }
 
     private static void createNewPromotion(TeaShop teaShops) {
@@ -199,9 +200,23 @@ public class Main {
         promotion.setPromotionDescription(promotionDescription);
         promotion.setCouponCode(couponCode);
         promotion.setDiscountRate(discountRate);
+
         System.out.println("Enter the product ID to Apply Promotion");
         String productId = input.next();
-
+        Product product = teaShops.getProduct(productId);
+        String choice = "R";
+        while((product==null)&&choice.equalsIgnoreCase("r")){
+            System.out.println("Invalid Product!!!  Enter r to retry or something else to quit ");
+            choice = input.next();
+            if(choice.equalsIgnoreCase("R")){
+                System.out.println("Enter the product ID to Apply Promotion");
+                productId = input.next();
+                product = teaShops.getProduct(productId);
+            }
+        }
+        if(product !=null){
+            product.setPromotion(promotion);
+        }
 
     }
 
