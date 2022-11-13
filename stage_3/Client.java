@@ -11,7 +11,7 @@ package stage_3;
 
 import java.util.ArrayList;
 
-public class Client {
+public class Client extends Person{
     private ArrayList<Sale> sales;
     private String clientId;
 

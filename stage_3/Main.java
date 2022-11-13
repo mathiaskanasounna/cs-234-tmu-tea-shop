@@ -132,6 +132,38 @@ public class Main {
     }
 
     private static void createNewClient(TeaShop teaShops) {
+        Client client = new Client();
+        System.out.println("Enter the detail on the new Client ");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter First Name ");
+        String firstName = input.next();
+        System.out.println("Enter Last Name");
+        String lastName = input.next();
+        System.out.println("Enter email ");
+        String email = input.next();
+        System.out.println("Enter Street Address");
+        String streetAddress= input.next();
+        System.out.println("Enter city");
+        String city = input.next();
+        System.out.println("Enter Zip Code");
+        String zip = input.next();
+        System.out.println("Enter State ");
+        String state = input.next();
+        System.out.println("Enter Telephone");
+        String telephone = input.next();
+        System.out.println("Enter Client ID");
+        String clientId = input.next();
+
+        client.setFirstName(firstName);
+        client.setLastName(lastName);
+        client.setEmail(email);
+        client.setStreetAddress(streetAddress);
+        client.setCity(city);
+        client.setZipCode(zip);
+        client.setState(state);
+        client.setTelephone(telephone);
+        client.setClientId(clientId);
+        teaShops.addClient(client);
     }
 
     private static void createNewProduct(TeaShop teaShops) {

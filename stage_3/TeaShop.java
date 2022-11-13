@@ -118,7 +118,7 @@ public class TeaShop {
 
     }
     public void addClient(Client client){
-
+        this.clients.add(client);
     }
     public void removeClient(String clientId){
 
