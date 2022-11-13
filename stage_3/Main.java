@@ -169,17 +169,25 @@ public class Main {
     }
 
     private static void removeProduct(TeaShop teaShop) {
+        System.out.println("Enter the Product ID to remove");
+        Scanner input = new Scanner(System.in);
+        String productId = input.next();
+        teaShop.removeProduct(productId);
     }
 
-    private static void removeEmployee(TeaShop teaShops) {
+    private static void removeEmployee(TeaShop teaShop) {
+        System.out.println("Enter the Employee ID to remove");
+        Scanner input = new Scanner(System.in);
+        String employeeId = input.next();
+        teaShop.removeEmployee(employeeId);
     }
 
-    private static void createNewManager(TeaShop teaShops) {
+    private static void createNewManager(TeaShop teaShop) {
         System.out.println("Enter the Employee ID of Manager");
         Scanner input = new Scanner(System.in);
         String employeeId = input.next();
-        Manager manager = new Manager();
-        Employee employee = teaShops.getEmployee(employeeId);
+
+        Employee employee = teaShop.getEmployee(employeeId);
         String choice = "R";
         while((employee==null)&&choice.equalsIgnoreCase("r")){
             System.out.println("Invalid Employee!!!  Enter r to retry or something else to quit ");
@@ -187,18 +195,19 @@ public class Main {
             if(choice.equalsIgnoreCase("R")){
                 System.out.println("Enter the Employee ID to Become manager");
                 employeeId = input.next();
-                employee = teaShops.getEmployee(employeeId);
+                employee = teaShop.getEmployee(employeeId);
             }
         }
         if(employee!=null){
             System.out.println("Enter the manager ID");
             String managerId = input.next();
+            Manager manager = new Manager(employee);
             manager.setManagerId(managerId);
-
+            teaShop.addManager(manager);
         }
     }
 
-    private static void createNewPromotion(TeaShop teaShops) {
+    private static void createNewPromotion(TeaShop teaShop) {
         Promotion promotion = new Promotion();
         System.out.println("Enter the detail on the new Promotion ");
         Scanner input = new Scanner(System.in);
@@ -223,7 +232,7 @@ public class Main {
 
         System.out.println("Enter the product ID to Apply Promotion");
         String productId = input.next();
-        Product product = teaShops.getProduct(productId);
+        Product product = teaShop.getProduct(productId);
         String choice = "R";
         while((product==null)&&choice.equalsIgnoreCase("r")){
             System.out.println("Invalid Product!!!  Enter r to retry or something else to quit ");
@@ -231,7 +240,7 @@ public class Main {
             if(choice.equalsIgnoreCase("R")){
                 System.out.println("Enter the product ID to Apply Promotion");
                 productId = input.next();
-                product = teaShops.getProduct(productId);
+                product = teaShop.getProduct(productId);
             }
         }
         if(product !=null){
@@ -240,7 +249,7 @@ public class Main {
 
     }
 
-    private static void addNewSale(TeaShop teaShops) {
+    private static void addNewSale(TeaShop teaShop) {
 
         Sale sale = new Sale();
         System.out.println("Enter the detail on the new Sale ");
@@ -260,7 +269,7 @@ public class Main {
                 int productQuantity = input.nextInt();
                 sale.setOrderDate(orderDate);
                 sale.setOrderId(orderId);
-                Product inventoryProduct = teaShops.getProduct(productId);
+                Product inventoryProduct = teaShop.getProduct(productId);
                 if (inventoryProduct == null) {
                     System.out.println("The Product Id do not exist");
                 } else {
@@ -286,7 +295,7 @@ public class Main {
         }while(choice.equalsIgnoreCase("q"));
     }
 
-    private static void createNewClient(TeaShop teaShops) {
+    private static void createNewClient(TeaShop teaShop) {
         Client client = new Client();
         System.out.println("Enter the detail on the new Client ");
         Scanner input = new Scanner(System.in);
@@ -318,10 +327,10 @@ public class Main {
         client.setState(state);
         client.setTelephone(telephone);
         client.setClientId(clientId);
-        teaShops.addClient(client);
+        teaShop.addClient(client);
     }
 
-    private static void createNewProduct(TeaShop teaShops) {
+    private static void createNewProduct(TeaShop teaShop) {
         Product product = new Product();
         System.out.println("Enter the detail on the new Product ");
         Scanner input = new Scanner(System.in);
@@ -340,10 +349,10 @@ public class Main {
         product.setQuantity(quantity);
         product.setUnitPrice(unitPrice);
         product.setDistributor(distributorName);
-        teaShops.addProduct(product);
+        teaShop.addProduct(product);
     }
 
-    private static void createNewEmployee(TeaShop teaShops) {
+    private static void createNewEmployee(TeaShop teaShop) {
         Employee employee = new Employee();
         System.out.println("Enter the detail on the new Employee ");
         Scanner input = new Scanner(System.in);
@@ -381,8 +390,6 @@ public class Main {
         employee.setZipCode(zip);
         employee.setState(state);
         employee.setTelephone(telephone);
-        teaShops.addEmployee(employee);
-
-
+        teaShop.addEmployee(employee);
     }
 }

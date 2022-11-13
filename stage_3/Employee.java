@@ -59,7 +59,7 @@ public class Employee extends Person{
         this.userName = userName;
     }
     public void showEmployeeInfo(){
-        System.out.println("|"+employeeId+"| "+"| "+super.getFirstName()+"|");
+        System.out.println("["+employeeId+", "+this.getFirstName()+", "+this.getLastName()+", "+this.employeeStatus+", "+this.getUserName()+" ]");
     }
 
 }

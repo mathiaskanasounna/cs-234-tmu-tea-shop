@@ -32,5 +32,6 @@ public class Client extends Person{
     }
 
     public void showClientInfo() {
+        System.out.println("["+clientId+", "+this.getFirstName()+", "+this.getLastName()+", "+this.getEmail()+", "+this.getTelephone()+" ]");
     }
 }

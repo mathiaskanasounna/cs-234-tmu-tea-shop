@@ -38,5 +38,6 @@ public class Manager extends Employee{
     }
 
     public void showManagerInfo() {
+        System.out.println("["+managerId+", "+this.getFirstName()+", "+this.getLastName()+", "+this.getTelephone()+", "+this.getUserName()+" ]");
     }
 }

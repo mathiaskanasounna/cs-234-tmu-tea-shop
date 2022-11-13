@@ -106,31 +106,88 @@ public class TeaShop {
         this.employees.add(employee);
     }
     public void removeEmployee(String employeeId){
-
+        int listSize= employees.size();
+        for(int i=0; i<employees.size();i++){
+            if(employees.get(i).getEmployeeId().equalsIgnoreCase(employeeId)){
+                employees.remove(i);
+            }
+        }
+        if(listSize==employees.size()){
+            System.out.println("No Employee ID "+employeeId+" found");
+        }
+        else{
+            System.out.println("Employee Removed");
+        }
     }
     public void createSale(ArrayList<Product> products){
 
     }
     public void removeSale(String saleId){
-
-    }
-    public void createPromotion(String productId, double discountRate){
-
+        int listSize= sales.size();
+        for(int i=0; i<sales.size();i++){
+            if(sales.get(i).getOrderId().equalsIgnoreCase(saleId)){
+                sales.remove(i);
+            }
+        }
+        if(listSize==employees.size()){
+            System.out.println("No Sale ID "+saleId+" found");
+        }
+        else{
+            System.out.println("Sale Removed");
+        }
     }
     public void addClient(Client client){
         this.clients.add(client);
     }
     public void removeClient(String clientId){
-
+        int listSize= clients.size();
+        for(int i=0; i<clients.size();i++){
+            if(clients.get(i).getClientId().equalsIgnoreCase(clientId)){
+                clients.remove(i);
+            }
+        }
+        if(listSize==clients.size()){
+            System.out.println("No Client ID "+clientId+" found");
+        }
+        else{
+            System.out.println("Client Removed");
+        }
     }
     public void removeProduct(String productId){
-
+        int listSize= products.size();
+        for(int i=0; i<products.size();i++){
+            if(products.get(i).getProductId().equalsIgnoreCase(productId)){
+                products.remove(i);
+            }
+        }
+        if(listSize==products.size()){
+            System.out.println("No Product ID "+productId+" found");
+        }
+        else{
+            System.out.println("Product Removed");
+        }
     }
     public  void addProduct(Product product){
         this.products.add(product);
     }
 
-
+    public  void addManager(Manager manager){
+        this.managers.add(manager);
+    }
+    public  void removeManager(String managerId){
+        int listSize= managers.size();
+        for(int i=0; i<managers.size();i++){
+            if(managers.get(i).getManagerId().equalsIgnoreCase(managerId)){
+                managers.remove(i);
+            }
+        }
+        if(listSize==managers.size()){
+            System.out.println("No Sale ID "+managerId+" found");
+        }
+        else{
+            System.out.println("Manager Removed");
+        }
+    }
     public Product getProduct(String productId) {
         for(Product product: products){
             if(product.getProductId().equals(productId)){
@@ -140,31 +197,26 @@ public class TeaShop {
         return null;
     }
     public void displayEmployees(){
-        //@TODO Theodoro
         for(Employee employee:employees){
             employee.showEmployeeInfo();
         }
     }
     public void displayClients(){
-        //@TODO Theodoro
         for(Client client:clients){
             client.showClientInfo();
         }
     }
     public void displayManagers(){
-        //@TODO Theodoro
         for(Manager manager:managers){
             manager.showManagerInfo();
         }
     }
     public void displayProducts(){
-        //@TODO Theodoro
         for(Product product:products){
             product.showProductInfo();
         }
     }
     public void displaySales(){
-        //@TODO Theodoro
         for(Sale sale:sales){
             sale.showSaleInfo();
         }

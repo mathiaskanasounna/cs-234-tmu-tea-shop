@@ -72,5 +72,6 @@ public class Product {
     }
 
     public void showProductInfo() {
+        System.out.println("["+productId+", "+productName+", "+unitPrice+", "+quantity+", "+distributor+" ]");
     }
 }

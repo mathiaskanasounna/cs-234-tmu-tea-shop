@@ -54,5 +54,6 @@ public class Sale {
     }
 
     public void showSaleInfo() {
+        System.out.println("["+orderId+", "+orderDate+" ]");
     }
 }
