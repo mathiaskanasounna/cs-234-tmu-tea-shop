@@ -17,6 +17,8 @@ public class Product {
     private String productName;
     private double unitPrice;
     private int quantity;
+    private  Promotion promotion;
+
     public String getDistributor() {
         return distributor;
     }
@@ -55,6 +57,14 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public Promotion getPromotion() {
+        return promotion;
+    }
+
+    public void setPromotion(Promotion promotion) {
+        this.promotion = promotion;
     }
 
     public String printProduct(){

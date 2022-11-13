@@ -178,6 +178,31 @@ public class Main {
     }
 
     private static void createNewPromotion(TeaShop teaShops) {
+        Promotion promotion = new Promotion();
+        System.out.println("Enter the detail on the new Promotion ");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter Promotion ID ");
+        String promotionId = input.next();
+        System.out.println("Enter Start Date ");
+        String startDate = input.next();
+        System.out.println("Enter End Date ");
+        String endDate = input.next();
+        System.out.println("Enter the promotion description");
+        String promotionDescription = input.nextLine();
+        System.out.println("Enter coupon code ");
+        String couponCode = input.next();
+        System.out.println("Enter Discount rate");
+        double discountRate = input.nextDouble();
+        promotion.setPromotionID(promotionId);
+        promotion.setEndDate(LocalDate.parse(endDate));
+        promotion.setStartDate(LocalDate.parse(startDate));
+        promotion.setPromotionDescription(promotionDescription);
+        promotion.setCouponCode(couponCode);
+        promotion.setDiscountRate(discountRate);
+        System.out.println("Enter the product ID to Apply Promotion");
+        String productId = input.next();
+
+
     }
 
     private static void addNewSale(TeaShop teaShops) {
