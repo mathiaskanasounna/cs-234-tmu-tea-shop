@@ -9,7 +9,9 @@
  * */
 package stage_3;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -136,7 +138,45 @@ public class Main {
     }
 
     private static void createNewEmployee(TeaShop teaShops) {
-        System.out.println("Enter the detail on the new Employee");
+        Employee employee = new Employee();
+        System.out.println("Enter the detail on the new Employee ");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter First Name ");
+        String firstName = input.next();
+        System.out.println("Enter Last Name");
+        String lastName = input.next();
+        System.out.println("Enter email ");
+        String email = input.next();
+        System.out.println("Enter Street Address");
+        String streetAddress= input.next();
+        System.out.println("Enter city");
+        String city = input.next();
+        System.out.println("Enter Zip Code");
+        String zip = input.next();
+        System.out.println("Enter State ");
+        String state = input.next();
+        System.out.println("Enter Telephone");
+        String telephone = input.next();
+        System.out.println("Enter employee ID");
+        String employeeId = input.next();
+        LocalDate hireDate =  LocalDate.now();
+        String employeeStatus = "Active";
+        System.out.println("Enter employee username");
+        String username =  input.next();
+        employee.setEmployeeId(employeeId);
+        employee.setHireDate(hireDate);
+        employee.setEmployeeStatus(employeeStatus);
+        employee.setUserName(username);
+        employee.setFirstName(firstName);
+        employee.setLastName(lastName);
+        employee.setEmail(email);
+        employee.setStreetAddress(streetAddress);
+        employee.setCity(city);
+        employee.setZipCode(zip);
+        employee.setState(state);
+        employee.setTelephone(telephone);
+        teaShops.addEmployee(employee);
+
 
     }
 }

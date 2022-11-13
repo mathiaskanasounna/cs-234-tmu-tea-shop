@@ -66,4 +66,32 @@ public class TeaShop {
     public void setEmployees(ArrayList<Employee> employees) {
         this.employees = employees;
     }
+    public void addEmployee(Employee employee){
+
+    }
+    public void removeEmployee(String employeeId){
+
+    }
+    public void createSale(ArrayList<Product> products){
+
+    }
+    public void removeSale(String saleId){
+
+    }
+    public void createPromotion(String productId, double discountRate){
+
+    }
+    public void addClient(Client client){
+
+    }
+    public void removeClient(String clientId){
+
+    }
+    public void removeProduct(String productId){
+
+    }
+    public  void addProduct(Product product){
+
+    }
+
 }

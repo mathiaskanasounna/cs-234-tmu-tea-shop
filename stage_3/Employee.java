@@ -9,12 +9,13 @@
  * */
 package stage_3;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Employee extends Person{
     private String employeeId;
-    private Date hireDate;
-    private Date leaveDate;
+    private LocalDate hireDate;
+    private LocalDate leaveDate;
     private String employeeStatus;
     private  String userName;
 
@@ -26,19 +27,19 @@ public class Employee extends Person{
         this.employeeId = employeeId;
     }
 
-    public Date getHireDate() {
+    public LocalDate getHireDate() {
         return hireDate;
     }
 
-    public void setHireDate(Date hireDate) {
+    public void setHireDate(LocalDate hireDate) {
         this.hireDate = hireDate;
     }
 
-    public Date getLeaveDate() {
+    public LocalDate getLeaveDate() {
         return leaveDate;
     }
 
-    public void setLeaveDate(Date leaveDate) {
+    public void setLeaveDate(LocalDate leaveDate) {
         this.leaveDate = leaveDate;
     }
 
