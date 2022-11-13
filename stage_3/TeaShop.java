@@ -147,27 +147,35 @@ public class TeaShop {
     }
     public void displayClients(){
         //@TODO Theodoro
-        for(Clients client:clients){
+        for(Client client:clients){
             client.showClientInfo();
         }
     }
     public void displayManagers(){
         //@TODO Theodoro
-        for(Managers manager:managers){
+        for(Manager manager:managers){
             manager.showManagerInfo();
         }
     }
     public void displayProducts(){
         //@TODO Theodoro
-        for(Products product:products){
+        for(Product product:products){
             product.showProductInfo();
         }
     }
     public void displaySales(){
         //@TODO Theodoro
-        for(Sales sale:sales){
+        for(Sale sale:sales){
             sale.showSaleInfo();
         }
     }
 
+    public Employee getEmployee(String employeeId) {
+        for(Employee employee:employees){
+            if(employee.getEmployeeId().equalsIgnoreCase(employeeId)){
+                return employee;
+            }
+        }
+        return null;
+    }
 }

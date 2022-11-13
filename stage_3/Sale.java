@@ -53,4 +53,6 @@ public class Sale {
         this.products.add(product);
     }
 
+    public void showSaleInfo() {
+    }
 }

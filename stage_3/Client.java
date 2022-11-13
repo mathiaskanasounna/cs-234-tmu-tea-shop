@@ -30,4 +30,7 @@ public class Client extends Person{
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
+
+    public void showClientInfo() {
+    }
 }

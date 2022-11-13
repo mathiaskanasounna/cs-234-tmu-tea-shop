@@ -70,4 +70,7 @@ public class Product {
     public String printProduct(){
         return  this.productId;
     }
+
+    public void showProductInfo() {
+    }
 }

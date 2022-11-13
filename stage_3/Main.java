@@ -176,6 +176,26 @@ public class Main {
 
     private static void createNewManager(TeaShop teaShops) {
         System.out.println("Enter the Employee ID of Manager");
+        Scanner input = new Scanner(System.in);
+        String employeeId = input.next();
+        Manager manager = new Manager();
+        Employee employee = teaShops.getEmployee(employeeId);
+        String choice = "R";
+        while((employee==null)&&choice.equalsIgnoreCase("r")){
+            System.out.println("Invalid Employee!!!  Enter r to retry or something else to quit ");
+            choice = input.next();
+            if(choice.equalsIgnoreCase("R")){
+                System.out.println("Enter the Employee ID to Become manager");
+                employeeId = input.next();
+                employee = teaShops.getEmployee(employeeId);
+            }
+        }
+        if(employee!=null){
+            System.out.println("Enter the manager ID");
+            String managerId = input.next();
+            manager.setManagerId(managerId);
+
+        }
     }
 
     private static void createNewPromotion(TeaShop teaShops) {

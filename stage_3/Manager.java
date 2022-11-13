@@ -16,7 +16,27 @@ public class Manager extends Employee{
         return managerId;
     }
 
+    public Manager() {
+    }
+    public Manager(Employee employee){
+        this.setEmployeeId(employee.getEmployeeId());
+        this.setHireDate(employee.getHireDate());
+        this.setLeaveDate(employee.getLeaveDate());
+        this.setEmployeeStatus(employee.getEmployeeStatus());
+        this.setUserName(employee.getUserName());
+        this.setFirstName(employee.getFirstName());
+        this.setLastName(employee.getLastName());
+        this.setEmail(employee.getEmail());
+        this.setStreetAddress(employee.getStreetAddress());
+        this.setCity(employee.getCity());
+        this.setZipCode(employee.getZipCode());
+        this.setState(employee.getState());
+        this.setTelephone(employee.getTelephone());
+    }
     public void setManagerId(String managerId) {
         this.managerId = managerId;
+    }
+
+    public void showManagerInfo() {
     }
 }
