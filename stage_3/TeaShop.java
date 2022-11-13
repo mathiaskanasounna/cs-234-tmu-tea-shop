@@ -153,12 +153,21 @@ public class TeaShop {
     }
     public void displayManagers(){
         //@TODO Theodoro
+        for(Managers manager:managers){
+            manager.showManagerInfo();
+        }
     }
     public void displayProducts(){
         //@TODO Theodoro
+        for(Products product:products){
+            product.showProductInfo();
+        }
     }
     public void displaySales(){
         //@TODO Theodoro
+        for(Sales sale:sales){
+            sale.showSaleInfo();
+        }
     }
 
 }
