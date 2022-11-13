@@ -147,6 +147,9 @@ public class TeaShop {
     }
     public void displayClients(){
         //@TODO Theodoro
+        for(Clients client:clients){
+            client.showClientInfo();
+        }
     }
     public void displayManagers(){
         //@TODO Theodoro
