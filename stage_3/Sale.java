@@ -49,8 +49,17 @@ public class Sale {
         this.products = products;
     }
 
-    public int totalPrice(){
-        return 0;
+    public double totalPrice(){
+        double result = 0.0;
+        for(Product product:products){
+            if(product.getPromotion()!=null){
+                result = result+product.getQuantity()*product.getUnitPrice() *(1-product.getPromotion().getDiscountRate());
+            }
+            else{
+                result = result+product.getQuantity()*product.getUnitPrice();
+            }
+        }
+        return result;
     }
     public int numberOfItems(){
         return products.size();
@@ -61,5 +70,9 @@ public class Sale {
 
     public void showSaleInfo() {
         System.out.println("["+orderId+", "+orderDate+" ]");
+        System.out.println("List of products");
+        for(Product product:products){
+            product.showProductInfo();
+        }
     }
 }

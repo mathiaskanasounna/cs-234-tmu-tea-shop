@@ -19,18 +19,18 @@ public class Main {
     public static void main(String[] args) {
         TeaShop teaShop = new TeaShop();
 
-        System.out.println("Welcome To The Tea - Shop System");
+        System.out.println("\n                Welcome To The Tea - Shop System");
         Scanner input = new Scanner(System.in);
         String choice;
         do {
-            System.out.println("Enter your selection :");
-            System.out.println(" 1 - Add a new Employee,     2 - Add a new Product,      3 - Add a new Client");
-            System.out.println(" 4 - Add a new Sale,     5 - Add a new Promotion   6 - Add a new Manager");
-            System.out.println(" 7 - Remove an Employee,     8 - Remove a Product,  9 - Remove a Client");
-            System.out.println(" 10 - Remove a Sale     11 - Remove a Manager   12 - Display Employee");
-            System.out.println(" 13 - Display Client,     14 - Display Manager   15 - Display Product");
-            System.out.println(" 16 - Display Sales,     17 - Display Promotion   ");
-            System.out.println(" q or Q - to quit");
+            System.out.println("\nEnter your selection :\n");
+            System.out.println(" 1 - Add a new Employee,        2 - Add a new Product,      3 - Add a new Client");
+            System.out.println(" 4 - Add a new Sale,            5 - Add a new Promotion     6 - Add a new Manager");
+            System.out.println(" 7 - Remove an Employee,        8 - Remove a Product,       9 - Remove a Client");
+            System.out.println(" 10 - Remove a Sale             11 - Remove a Manager       12 - Display Employee");
+            System.out.println(" 13 - Display Client,           14 - Display Manager        15 - Display Product");
+            System.out.println(" 16 - Display Sales,            17 - Display Promotion      q or Q - to quit ");
+            System.out.println(" ");
             choice = input.next();
             if(choice.equalsIgnoreCase("1")){
                 //create a new Employee
@@ -227,7 +227,7 @@ public class Main {
         String promotionDescription = input.nextLine();
         System.out.println("Enter coupon code ");
         String couponCode = input.next();
-        System.out.println("Enter Discount rate");
+        System.out.println("Enter Discount rate between [0,1]");
         double discountRate = input.nextDouble();
         promotion.setPromotionID(promotionId);
         promotion.setEndDate(LocalDate.parse(endDate));
@@ -291,8 +291,14 @@ public class Main {
             else {
                 if(choice.equalsIgnoreCase("q")){
                     System.out.println("Here is the summary of the order");
-                    //@TODO
-                    //print the summary of the order
+                    if (sale.getProducts().size()!=0) {
+                        teaShop.getSales().add(sale);
+                        sale.showSaleInfo();
+                        System.out.println("Number of Items : "+sale.numberOfItems());
+                        System.out.println("Sale Total Price "+sale.totalPrice());
+                    }else{
+                        System.out.println("No product Enter");
+                    }
                 }
                 else {
                     System.out.println("Invalid Choice ");
@@ -306,23 +312,23 @@ public class Main {
         System.out.println("Enter the detail on the new Client ");
         Scanner input = new Scanner(System.in);
         System.out.println("Enter First Name ");
-        String firstName = input.next();
+        String firstName = input.nextLine();
         System.out.println("Enter Last Name");
-        String lastName = input.next();
+        String lastName = input.nextLine();
         System.out.println("Enter email ");
-        String email = input.next();
+        String email = input.nextLine();
         System.out.println("Enter Street Address");
-        String streetAddress= input.next();
+        String streetAddress= input.nextLine();
         System.out.println("Enter city");
-        String city = input.next();
+        String city = input.nextLine();
         System.out.println("Enter Zip Code");
-        String zip = input.next();
+        String zip = input.nextLine();
         System.out.println("Enter State ");
-        String state = input.next();
+        String state = input.nextLine();
         System.out.println("Enter Telephone");
-        String telephone = input.next();
+        String telephone = input.nextLine();
         System.out.println("Enter Client ID");
-        String clientId = input.next();
+        String clientId = input.nextLine();
 
         client.setFirstName(firstName);
         client.setLastName(lastName);
@@ -341,11 +347,11 @@ public class Main {
         System.out.println("Enter the detail on the new Product ");
         Scanner input = new Scanner(System.in);
         System.out.println("Enter Product Name ");
-        String productName = input.next();
+        String productName = input.nextLine();
         System.out.println("Enter Distributor Name");
-        String distributorName = input.next();
+        String distributorName = input.nextLine();
         System.out.println("Enter Product ID ");
-        String productId = input.next();
+        String productId = input.nextLine();
         System.out.println("Enter Unit Price");
         double unitPrice= input.nextDouble();
         System.out.println("Enter Quantity");

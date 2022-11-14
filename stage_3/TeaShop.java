@@ -201,26 +201,31 @@ public class TeaShop {
         return null;
     }
     public void displayEmployees(){
+        System.out.println("\nHere is the list of Employees\n");
         for(Employee employee:employees){
             employee.showEmployeeInfo();
         }
     }
     public void displayClients(){
+        System.out.println("\nHere is the list of Clients\n");
         for(Client client:clients){
             client.showClientInfo();
         }
     }
     public void displayManagers(){
+        System.out.println("\nHere is the list of Managers\n");
         for(Manager manager:managers){
             manager.showManagerInfo();
         }
     }
     public void displayProducts(){
+        System.out.println("\nHere is the list of Products\n");
         for(Product product:products){
             product.showProductInfo();
         }
     }
     public void displaySales(){
+        System.out.println("\nHere is the list of Sales\n");
         for(Sale sale:sales){
             sale.showSaleInfo();
         }
@@ -236,6 +241,7 @@ public class TeaShop {
     }
 
     public void displayPromotion() {
+        System.out.println("\nHere is the list of Promotions\n");
         for(Product product:products){
             if(product.getPromotion()!=null){
                 product.getPromotion().showPromotionInfo();
