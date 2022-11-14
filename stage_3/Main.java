@@ -165,6 +165,117 @@ public class Main {
 
     }
 
+    private static void modifyProduct(TeaShop teaShop) {
+        System.out.println("Enter the product ID to modify ");
+        Scanner input = new Scanner(System.in);
+        String productId = input.nextLine();
+        System.out.println("Enter new Product Name ");
+        Product product =teaShop.getProduct(productId);
+        if(product!=null) {
+            String productName = input.nextLine();
+            System.out.println("Enter new Distributor Name");
+            String distributorName = input.nextLine();
+
+            System.out.println("Enter new Unit Price");
+            double unitPrice = input.nextDouble();
+            System.out.println("Enter new Quantity");
+            int quantity = input.nextInt();
+
+            product.setProductName(productName);
+            product.setQuantity(quantity);
+            product.setUnitPrice(unitPrice);
+            product.setDistributor(distributorName);
+        }
+        else{
+            System.out.println("Invalid Product ID");
+        }
+    }
+
+    private static void modifyEmployee(TeaShop teaShop) {
+        System.out.println("Enter the Employee ID to modify ");
+        Scanner input = new Scanner(System.in);
+        String employeeId = input.next();
+        Employee employee = teaShop.getEmployee(employeeId);
+        if(employee!=null) {
+            System.out.println("Enter new First Name ");
+            String firstName = input.nextLine();
+            System.out.println("Enter new Last Name");
+            String lastName = input.nextLine();
+            System.out.println("Enter new email ");
+            String email = input.nextLine();
+            System.out.println("Enter new  Street Address");
+            String streetAddress = input.nextLine();
+            System.out.println("Enter new city");
+            String city = input.next();
+            System.out.println("Enter new Zip Code");
+            String zip = input.next();
+            System.out.println("Enter new State ");
+            String state = input.next();
+            System.out.println("Enter new Telephone");
+            String telephone = input.next();
+            System.out.println("Enter the new hire date");
+            LocalDate hireDate = LocalDate.parse(input.next());
+            System.out.println("Enter the new Status of the employee");
+            String employeeStatus = input.next();
+            System.out.println("Enter new employee username");
+            String username = input.next();
+            employee.setHireDate(hireDate);
+            employee.setEmployeeStatus(employeeStatus);
+            employee.setUserName(username);
+            employee.setFirstName(firstName);
+            employee.setLastName(lastName);
+            employee.setEmail(email);
+            employee.setStreetAddress(streetAddress);
+            employee.setCity(city);
+            employee.setZipCode(zip);
+            employee.setState(state);
+            employee.setTelephone(telephone);
+        }
+        else{
+            System.out.println("Invalid Employee ID");
+        }
+    }
+
+    private static void modifyClient(TeaShop teaShop) {
+        System.out.println("Enter the client ID to update ");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter Client ID");
+        String clientId = input.nextLine();
+        Client client =teaShop.getClient(clientId);
+        if(client!=null) {
+            System.out.println("Enter new First Name ");
+            String firstName = input.nextLine();
+            System.out.println("Enter new Last Name");
+            String lastName = input.nextLine();
+            System.out.println("Enter new email ");
+            String email = input.nextLine();
+            System.out.println("Enter new Street Address");
+            String streetAddress = input.nextLine();
+            System.out.println("Enter new city");
+            String city = input.nextLine();
+            System.out.println("Enter new Zip Code");
+            String zip = input.nextLine();
+            System.out.println("Enter new State ");
+            String state = input.nextLine();
+            System.out.println("Enter new Telephone");
+            String telephone = input.nextLine();
+
+
+            client.setFirstName(firstName);
+            client.setLastName(lastName);
+            client.setEmail(email);
+            client.setStreetAddress(streetAddress);
+            client.setCity(city);
+            client.setZipCode(zip);
+            client.setState(state);
+            client.setTelephone(telephone);
+        }
+        else {
+            System.out.println("Invalid Client ID");
+        }
+
+    }
+
     private static void popuplateData(TeaShop teaShop) {
         //String firstName, String lastName, String email, String streetAddress, String city, String zipCode, String state,
         // String telephone, String employeeId, LocalDate hireDate, LocalDate leaveDate, String employeeStatus, String userName

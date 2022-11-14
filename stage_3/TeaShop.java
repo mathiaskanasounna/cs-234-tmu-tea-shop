@@ -239,7 +239,14 @@ public class TeaShop {
         }
         return null;
     }
-
+    public Client getClient(String clientId) {
+        for(Client client:clients){
+            if(client.getClientId().equalsIgnoreCase(clientId)){
+                return client;
+            }
+        }
+        return null;
+    }
     public void displayPromotion() {
         System.out.println("\nHere is the list of Promotions\n");
         for(Product product:products){
