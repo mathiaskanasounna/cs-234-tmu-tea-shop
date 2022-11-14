@@ -19,6 +19,12 @@ public class Sale {
         products = new ArrayList<>();
     }
 
+    public Sale(String orderId, LocalDateTime orderDate, ArrayList<Product> products) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.products = products;
+    }
+
     public String getOrderId() {
         return orderId;
     }

@@ -17,6 +17,7 @@ public class Manager extends Employee{
     }
 
     public Manager() {
+        super();
     }
     public Manager(Employee employee){
         this.setEmployeeId(employee.getEmployeeId());

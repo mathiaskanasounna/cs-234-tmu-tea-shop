@@ -19,6 +19,18 @@ public class Product {
     private int quantity;
     private  Promotion promotion;
 
+    public Product() {
+    }
+
+    public Product(String distributor, String productId, String productName, double unitPrice, int quantity, Promotion promotion) {
+        this.distributor = distributor;
+        this.productId = productId;
+        this.productName = productName;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
+        this.promotion = promotion;
+    }
+
     public String getDistributor() {
         return distributor;
     }

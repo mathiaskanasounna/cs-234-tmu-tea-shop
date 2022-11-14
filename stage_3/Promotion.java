@@ -21,6 +21,18 @@ public class Promotion {
     private String couponCode;
     private double discountRate;
 
+    public Promotion() {
+    }
+
+    public Promotion(String promotionID, LocalDate startDate, LocalDate endDate, String promotionDescription, String couponCode, double discountRate) {
+        this.promotionID = promotionID;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.promotionDescription = promotionDescription;
+        this.couponCode = couponCode;
+        this.discountRate = discountRate;
+    }
+
     public String getPromotionID() {
         return promotionID;
     }

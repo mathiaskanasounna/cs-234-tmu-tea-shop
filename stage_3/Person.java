@@ -82,4 +82,18 @@ public class Person {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
+    public Person() {
+    }
+
+    public Person(String firstName, String lastName, String email, String streetAddress, String city, String zipCode, String state, String telephone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.state = state;
+        this.telephone = telephone;
+    }
 }
