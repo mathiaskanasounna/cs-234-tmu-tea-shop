@@ -290,21 +290,22 @@ public class Main {
             }
             else {
                 if(choice.equalsIgnoreCase("q")){
-                    System.out.println("Here is the summary of the order");
-                    if (sale.getProducts().size()!=0) {
-                        teaShop.getSales().add(sale);
-                        sale.showSaleInfo();
-                        System.out.println("Number of Items : "+sale.numberOfItems());
-                        System.out.println("Sale Total Price "+sale.totalPrice());
-                    }else{
-                        System.out.println("No product Enter");
-                    }
+                    System.out.println("Leaving the sale Menu ");
                 }
                 else {
                     System.out.println("Invalid Choice ");
                 }
             }
         }while(choice.equalsIgnoreCase("q"));
+        System.out.println("Here is the summary of the order");
+        if (sale.getProducts().size()!=0) {
+            teaShop.getSales().add(sale);
+            sale.showSaleInfo();
+            System.out.println("Number of Items : "+sale.numberOfItems());
+            System.out.println("Sale Total Price "+sale.totalPrice());
+        }else{
+            System.out.println("No product Enter");
+        }
     }
 
     private static void createNewClient(TeaShop teaShop) {
