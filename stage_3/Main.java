@@ -123,9 +123,25 @@ public class Main {
                                                                                 if(choice.equalsIgnoreCase("17")){
                                                                                    //17 display promotion
                                                                                     showPromotions(teaShop);
-                                                                                }else{
-                                                                                    if(choice.equalsIgnoreCase(""))
-                                                                                    System.out.println("Invalid choice");
+                                                                                }
+                                                                                else{
+                                                                                    if(choice.equalsIgnoreCase("18")){
+                                                                                        modifyClient(teaShop);
+                                                                                    }
+                                                                                    else{
+                                                                                        if(choice.equalsIgnoreCase("19")){
+                                                                                            modifyEmployee(teaShop);
+
+                                                                                        }
+                                                                                        else{
+                                                                                            if(choice.equalsIgnoreCase("20")){
+                                                                                                modifyProduct(teaShop);
+                                                                                            }
+                                                                                            else{
+                                                                                                System.out.println("Invalid choice");
+                                                                                            }
+                                                                                        }
+                                                                                    }
                                                                                 }
                                                                             }
                                                                         }
