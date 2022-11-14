@@ -18,6 +18,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         TeaShop teaShop = new TeaShop();
+        popuplateData(teaShop);
+
 
         System.out.println("\n                Welcome To The Tea - Shop System");
         Scanner input = new Scanner(System.in);
@@ -29,7 +31,9 @@ public class Main {
             System.out.println(" 7 - Remove an Employee,        8 - Remove a Product,       9 - Remove a Client");
             System.out.println(" 10 - Remove a Sale             11 - Remove a Manager       12 - Display Employee");
             System.out.println(" 13 - Display Client,           14 - Display Manager        15 - Display Product");
-            System.out.println(" 16 - Display Sales,            17 - Display Promotion      q or Q - to quit ");
+            System.out.println(" 16 - Display Sales,            17 - Display Promotion      18 - Modify Client");
+            System.out.println(" 19 - Modify Employee,          20 - Modify Product        q or Q - to quit");
+
             System.out.println(" ");
             choice = input.next();
             if(choice.equalsIgnoreCase("1")){
@@ -120,6 +124,7 @@ public class Main {
                                                                                    //17 display promotion
                                                                                     showPromotions(teaShop);
                                                                                 }else{
+                                                                                    if(choice.equalsIgnoreCase(""))
                                                                                     System.out.println("Invalid choice");
                                                                                 }
                                                                             }
@@ -142,6 +147,34 @@ public class Main {
             }
         }while(!choice.equalsIgnoreCase("Q"));
 
+    }
+
+    private static void popuplateData(TeaShop teaShop) {
+        //String firstName, String lastName, String email, String streetAddress, String city, String zipCode, String state,
+        // String telephone, String employeeId, LocalDate hireDate, LocalDate leaveDate, String employeeStatus, String userName
+        Employee employee1 = new Employee("Mathias","Sounna","kana@gmail.com","123",
+                "Portales","234","NM","555-555-5555","001",LocalDate.parse("2022-11-13"),
+                LocalDate.parse("2023-11-13"),"hired","kana");
+        Employee employee2 = new Employee("James","Fox","James@gmail.com","123","Portales",
+                "234","NM","999-999-9999","002",LocalDate.parse("2022-11-14"),LocalDate.parse("2023-11-14"),
+                "hired","james");
+        teaShop.addEmployee(employee1);
+        teaShop.addEmployee(employee2);
+
+        //String firstName, String lastName, String email, String streetAddress, String city, String zipCode, String state,
+        // String telephone, ArrayList<Sale> sales, String clientId
+        Client client1 = new Client("Theodoro","Leyva","teddy@gmail.com","123","Portales",
+                "234","NM","333-333-3333",null,"123");
+        Client client2 = new Client("Sara","Hernandez","sara@gmail.com","123","Portales",
+                "234","NM","444-444-4444",null,"113");
+        Client client3 = new Client("Mike","Smith","Mike@gmail.com","123","Portales","234",
+                "NM","111-111-1111",null,"112");
+        teaShop.addClient(client1);teaShop.addClient(client2);teaShop.addClient(client3);
+        //String distributor, String productId, String productName, double unitPrice, int quantity, Promotion promotion)
+        Product product1 = new Product("Walmart","1","Bread",1.0,100,null);
+        Product product2 = new Product("Kroger","1","Coffee",2.0,100,null);
+        Product product3 = new Product("Aldi","1","Tea",1.0,100,null);
+        teaShop.addProduct(product1);teaShop.addProduct(product2);teaShop.addProduct(product3);
     }
 
     private static void showPromotions(TeaShop teaShop) {
@@ -218,15 +251,15 @@ public class Main {
         System.out.println("Enter the detail on the new Promotion ");
         Scanner input = new Scanner(System.in);
         System.out.println("Enter Promotion ID ");
-        String promotionId = input.next();
-        System.out.println("Enter Start Date ");
-        String startDate = input.next();
-        System.out.println("Enter End Date ");
-        String endDate = input.next();
+        String promotionId = input.nextLine();
+        System.out.println("Enter Start Date like yyyy-mm-dd");
+        String startDate = input.nextLine();
+        System.out.println("Enter End Date like yyyy-mm-dd");
+        String endDate = input.nextLine();
         System.out.println("Enter the promotion description");
         String promotionDescription = input.nextLine();
         System.out.println("Enter coupon code ");
-        String couponCode = input.next();
+        String couponCode = input.nextLine();
         System.out.println("Enter Discount rate between [0,1]");
         double discountRate = input.nextDouble();
         promotion.setPromotionID(promotionId);
@@ -237,7 +270,7 @@ public class Main {
         promotion.setDiscountRate(discountRate);
 
         System.out.println("Enter the product ID to Apply Promotion");
-        String productId = input.next();
+        String productId = input.nextLine();
         Product product = teaShop.getProduct(productId);
         String choice = "R";
         while((product==null)&&choice.equalsIgnoreCase("r")){
@@ -284,6 +317,7 @@ public class Main {
                     product.setQuantity(productQuantity);
                     product.setProductName(inventoryProduct.getProductName());
                     product.setUnitPrice(inventoryProduct.getUnitPrice());
+                    product.setProductId(productId);
                     inventoryProduct.setQuantity(inventoryProduct.getQuantity() - productQuantity);
                     sale.addProduct(product);
                 }
