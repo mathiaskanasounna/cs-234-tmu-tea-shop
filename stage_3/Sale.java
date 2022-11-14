@@ -74,5 +74,6 @@ public class Sale {
         for(Product product:products){
             product.showProductInfo();
         }
+        System.out.println("____________________________________");
     }
 }

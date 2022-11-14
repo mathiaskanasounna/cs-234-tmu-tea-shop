@@ -12,7 +12,6 @@ package stage_3;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -194,7 +193,7 @@ public class Main {
     private static void modifyEmployee(TeaShop teaShop) {
         System.out.println("Enter the Employee ID to modify ");
         Scanner input = new Scanner(System.in);
-        String employeeId = input.next();
+        String employeeId = input.nextLine();
         Employee employee = teaShop.getEmployee(employeeId);
         if(employee!=null) {
             System.out.println("Enter new First Name ");
@@ -239,7 +238,6 @@ public class Main {
     private static void modifyClient(TeaShop teaShop) {
         System.out.println("Enter the client ID to update ");
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter Client ID");
         String clientId = input.nextLine();
         Client client =teaShop.getClient(clientId);
         if(client!=null) {
@@ -277,6 +275,7 @@ public class Main {
     }
 
     private static void popuplateData(TeaShop teaShop) {
+        System.out.println("Initializing Dummies data");
         //String firstName, String lastName, String email, String streetAddress, String city, String zipCode, String state,
         // String telephone, String employeeId, LocalDate hireDate, LocalDate leaveDate, String employeeStatus, String userName
         Employee employee1 = new Employee("Mathias","Sounna","kana@gmail.com","123",
@@ -298,10 +297,20 @@ public class Main {
                 "NM","111-111-1111",null,"112");
         teaShop.addClient(client1);teaShop.addClient(client2);teaShop.addClient(client3);
         //String distributor, String productId, String productName, double unitPrice, int quantity, Promotion promotion)
-        Product product1 = new Product("Walmart","1","Bread",1.0,100,null);
-        Product product2 = new Product("Kroger","1","Coffee",2.0,100,null);
-        Product product3 = new Product("Aldi","1","Tea",1.0,100,null);
+        Product product1 = new Product("Walmart","001","Bread",1.0,100,null);
+        Product product2 = new Product("Kroger","002","Coffee",2.0,100,null);
+        Product product3 = new Product("Aldi","003","Tea",1.0,100,null);
         teaShop.addProduct(product1);teaShop.addProduct(product2);teaShop.addProduct(product3);
+
+        Product productSale1 = new Product("Kroger","002","Coffee",2.0,10,null);
+        Product productSale2 = new Product("Aldi","003","Tea",1.0,10,null);
+        ArrayList<Product> productsSales = new ArrayList<>();
+        productsSales.add(productSale1);productsSales.add(productSale2);
+        Sale sale1 = new Sale("001",LocalDateTime.now(),productsSales);
+        Sale sale2 = new Sale("002",LocalDateTime.now(),productsSales);
+        ArrayList<Sale> sales = new ArrayList<>();
+        sales.add(sale1);sales.add(sale2);
+        teaShop.setSales(sales);
     }
 
     private static void showPromotions(TeaShop teaShop) {
@@ -332,6 +341,10 @@ public class Main {
     }
 
     private static void removeSale(TeaShop teaShop) {
+        System.out.println("Enter the Sale ID to remove");
+        Scanner input = new Scanner(System.in);
+        String saleId = input.next();
+        teaShop.removeSale(saleId);
     }
 
     private static void removeProduct(TeaShop teaShop) {

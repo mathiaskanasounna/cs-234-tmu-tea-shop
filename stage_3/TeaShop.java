@@ -130,7 +130,7 @@ public class TeaShop {
                 sales.remove(i);
             }
         }
-        if(listSize==employees.size()){
+        if(listSize==sales.size()){
             System.out.println("No Sale ID "+saleId+" found");
         }
         else{
