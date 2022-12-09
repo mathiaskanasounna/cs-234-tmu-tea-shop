@@ -1,0 +1,4 @@
+distributor,productId,productName,unitPrice,quantity,promotion_id
+23,23,23,23.0,234,null
+44,44,44,44.0,44,null
+44,44d,44,44.0,44,null
